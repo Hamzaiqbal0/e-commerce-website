@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <header>
       {/* First Row */}
-      <div className="w-full bg-black text-white flex flex-col md:flex-row md:items-center md:justify-between px-8 py-4">
+      <div className="w-full bg-black text-white flex flex-col md:flex-row md:items-center md:justify-between px-8 py-1">
         <div className="flex space-x-6 mb-2 md:mb-0">
           <span>Phone: 03442148252</span>
           <span>Email: Hamza@gmail.com</span>

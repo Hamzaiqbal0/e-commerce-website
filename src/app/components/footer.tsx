@@ -86,7 +86,8 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="text-center text-gray-600">
-        <p>All rights reserved</p>
+        <p>All Rights Reserved</p>
+        <p>Made By Muhammad Hamza Iqbal</p>
       </div>
     </footer>
   );
