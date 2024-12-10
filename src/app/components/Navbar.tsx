@@ -11,41 +11,41 @@ const Navbar = () => {
     <header>
       {/* First Row */}
       <div className="w-full bg-black text-white flex flex-col md:flex-row md:items-center md:justify-between px-8 py-1">
-        <div className="flex space-x-6 mb-2 md:mb-0">
-          <span>Phone: 03442148252</span>
-          <span>Email: Hamza@gmail.com</span>
+        <div className="flex flex-wrap justify-between md:space-x-6 mb-2 md:mb-0 ">
+          <span className="text-sm">Phone: 03442148252</span>
+          <span className="text-sm">Email: Hamza@gmail.com</span>
         </div>
 
-        <div className="text-center mb-2 md:mb-0 mr-48">
-          <p className="text-lg font-semibold">
+        <div className="text-center mb-2 md:mb-0 md:mx-auto">
+          <p className="text-sm md:text-lg font-semibold">
             Follow us and get a chance for 50% discount
           </p>
         </div>
 
-        <div className="flex space-x-4 justify-center md:justify-end">
+        <div className="flex space-x-4 justify-center md:justify-end mt-2 md:mt-0">
           <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-            <FaFacebook size={24} />
+            <FaFacebook size={20} />
           </a>
           <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={24} />
+            <FaTwitter size={20} />
           </a>
           <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={24} />
+            <FaInstagram size={20} />
           </a>
           <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-            <FaYoutube size={24} />
+            <FaYoutube size={20} />
           </a>
         </div>
       </div>
 
       {/* Second Row */}
       <div className="w-full bg-gray-100 text-gray-700 flex items-center justify-between px-8 py-4 shadow-md">
-        <h1 className="text-2xl font-bold">Bandage</h1>
+        <h1 className="text-3xl font-bold text-blue-700">Bandage</h1>
 
-        {/* Navigation Links and Icons */}
+        {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-6">
           <nav>
-            <ul className="flex space-x-6 text-lg items-center mr-52">
+            <ul className="flex space-x-6 text-lg items-center">
               <li><a href="#" className="hover:text-blue-500">Home</a></li>
               <li><a href="#" className="hover:text-blue-500">Shop</a></li>
               <li><a href="#" className="hover:text-blue-500">About</a></li>
@@ -56,7 +56,6 @@ const Navbar = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            
             <a href="#" className="hover:text-blue-700 text-blue-500 font-semibold">
               Login/Register
             </a>
@@ -69,7 +68,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
             <FaBars size={24} />
