@@ -253,7 +253,7 @@ export default function Home() {
 <section className="max-w-[1440px] bg-gray-200 py-12 px-4 md:px-8 mx-auto">
   {/* Heading Sub-section */}
   <div className="max-w-[631px] mb-8 mx-auto text-center">
-    <p className="text-lg mb-2 text-blue-700">Practice Advice</p>
+    <p className="text-lg mb-2 text-blue-700 font-semibold">Practice Advice</p>
     <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Post</h2>
     <p className="text-gray-600">
       Problems trying to resolve the conflict between the two major realms of classical physics, Newtonian mechanics.
