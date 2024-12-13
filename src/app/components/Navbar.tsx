@@ -4,12 +4,14 @@
 import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
+    
     <header>
-      {/* First Row */}
+      {/* First Row */}     
       <div className="w-full bg-black text-white flex flex-col md:flex-row md:items-center md:justify-between px-8 py-1">
         <div className="flex flex-wrap justify-between md:space-x-6 mb-2 md:mb-0 ">
           <span className="text-sm">Phone: 03442148252</span>
@@ -47,7 +49,7 @@ const Navbar = () => {
           <nav>
             <ul className="flex space-x-6 text-lg items-center">
               <li><a href="#" className="hover:text-blue-500">Home</a></li>
-              <li><a href="#" className="hover:text-blue-500">Shop</a></li>
+              <li><a href="/shop" className="hover:text-blue-500">Shop</a></li>
               <li><a href="#" className="hover:text-blue-500">About</a></li>
               <li><a href="#" className="hover:text-blue-500">Blog</a></li>
               <li><a href="#" className="hover:text-blue-500">Contact</a></li>
