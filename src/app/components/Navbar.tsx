@@ -50,7 +50,7 @@ const Navbar = () => {
             <ul className="flex space-x-6 text-lg items-center">
               <li><a href="/" className="hover:text-blue-500">Home</a></li>
               <li><a href="/shop" className="hover:text-blue-500">Shop</a></li>
-              <li><a href="#" className="hover:text-blue-500">About</a></li>
+              <li><a href="/aboutus" className="hover:text-blue-500">About Us</a></li>
               <li><a href="#" className="hover:text-blue-500">Blog</a></li>
               <li><a href="#" className="hover:text-blue-500">Contact</a></li>
               <li><a href="#" className="hover:text-blue-500">Pages</a></li>
