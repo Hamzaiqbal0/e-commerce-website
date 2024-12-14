@@ -1,4 +1,6 @@
 // src/app/about/page.tsx
+import Footer from '../components/footer';
+
 export default function AboutUs() {
     return (
       <div className="w-[1440px] h-[729px] mx-auto">
@@ -47,6 +49,14 @@ export default function AboutUs() {
               alt="About Us"
               className="w-full h-full object-cover"></img>
               </div>
+
+              <div className="w-[1440px] h-[264px]">
+            <img
+              src="/321.png"
+              alt="About Us"
+              className="w-full h-full object-cover"></img>
+              </div>
+              <Footer />
       </div>
     );
   }
