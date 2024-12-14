@@ -51,9 +51,9 @@ const Navbar = () => {
               <li><a href="/" className="hover:text-blue-500">Home</a></li>
               <li><a href="/shop" className="hover:text-blue-500">Shop</a></li>
               <li><a href="/aboutus" className="hover:text-blue-500">About Us</a></li>
-              <li><a href="#" className="hover:text-blue-500">Blog</a></li>
-              <li><a href="#" className="hover:text-blue-500">Contact</a></li>
-              <li><a href="#" className="hover:text-blue-500">Pages</a></li>
+              <li><a href="/team" className="hover:text-blue-500">Our Team</a></li>
+              <li><a href="/contactus" className="hover:text-blue-500">Contact Us</a></li>
+              <li><a href="/pricing" className="hover:text-blue-500">Pages</a></li>
             </ul>
           </nav>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
             <a href="#" aria-label="Search" className="hover:text-black text-blue-600">
               <FaSearch size={20} />
             </a>
-            <a href="#" aria-label="Cart" className="hover:text-black text-blue-600">
+            <a href="/pricing" aria-label="Cart" className="hover:text-black text-blue-600">
               <FaShoppingCart size={20} />
             </a>
           </div>

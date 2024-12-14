@@ -63,7 +63,7 @@ export default function Pricing() {
           <li><a href="/" className="hover:text-gray-500 font-semibold">Home</a></li>
           <li><a href="/productspecs" className="hover:text-gray-500 font-semibold">Product</a></li>
           <li><a href="/pricing" className="hover:text-gray-500 font-semibold">Pricing</a></li>
-          <li><a href="/contact" className="hover:text-gray-500 font-semibold">Contact</a></li>
+          <li><a href="/contactus" className="hover:text-gray-500 font-semibold">Contact</a></li>
         </ul>
         <div className="flex space-x-4 items-center">
           <a href="/login" className="hover:text-gray-500">Login</a>

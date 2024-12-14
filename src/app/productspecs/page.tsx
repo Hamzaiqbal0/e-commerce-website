@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/footer';
+import Link from 'next/link';
 
 export default function ProductDetails() {
   return (
@@ -65,9 +66,12 @@ export default function ProductDetails() {
 
           {/* Select Option Button & Icons */}
           <div className="flex items-center gap-4">
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-              Select Option
-            </button>
+          <Link href="/pricing">
+  <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+    Add to Cart
+  </button>
+</Link>
+
             <div className="flex gap-3">
               <button className="text-gray-600 hover:text-red-500">
                 &#x2764; {/* Heart Icon */}
