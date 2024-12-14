@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6">
           <nav>
             <ul className="flex space-x-6 text-lg items-center">
-              <li><a href="#" className="hover:text-blue-500">Home</a></li>
+              <li><a href="/" className="hover:text-blue-500">Home</a></li>
               <li><a href="/shop" className="hover:text-blue-500">Shop</a></li>
               <li><a href="#" className="hover:text-blue-500">About</a></li>
               <li><a href="#" className="hover:text-blue-500">Blog</a></li>
