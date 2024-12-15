@@ -103,7 +103,7 @@ export default function ProductDetails() {
           <div className="mb-4">
             <p className="text-gray-600">Discover our premium collection of T-shirts designed to provide unmatched comfort and style for your daily wardrobe.
                  Made from 100% high-quality cotton, these T-shirts are breathable, soft, and perfect for all-day wear.<br/><br/>
-                 Available in a variety of classic colors and sizes, they cater to everyones preference
+                 Available in a variety of classic colors and sizes, they cater to everyone preference
                  while the durable fabric promises longevity even after multiple washes.<br/><br/>
                  Elevate your wardrobe with these versatile T-shirts that combine quality, affordability, and timeless design.</p>
                  </div>          
