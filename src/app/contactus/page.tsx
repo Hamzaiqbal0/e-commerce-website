@@ -101,8 +101,8 @@ export default function ContactUs() {
           ))}
         </div>
 
-        <p className="text-xl font-semibold mb-4">We can't wait to meet you</p>
-        <h2 className="text-3xl font-bold mb-6">Let's Talk</h2>
+        <p className="text-xl font-semibold mb-4">We can not wait to meet you</p>
+        <h2 className="text-3xl font-bold mb-6">Lets Talk</h2>
         <button className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 shadow-lg mb-10">
           Try it for Free
         </button>
