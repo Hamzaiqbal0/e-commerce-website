@@ -1,94 +1,105 @@
-// src/app/components/Header.tsx
-"use client"
+"use client";
 
 import React, { useState } from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
-
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaSearch,
+  FaShoppingCart,
+  FaBars,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    
-    <header>
-      {/* First Row */}     
-      <div className="w-full bg-black text-white flex flex-col md:flex-row md:items-center md:justify-between px-8 py-1">
-        <div className="flex flex-wrap justify-between md:space-x-6 mb-2 md:mb-0 ">
-          <span className="text-sm">Phone: 03442148252</span>
-          <span className="text-sm">Email: Hamza@gmail.com</span>
+    <header className="w-full">
+      {/* First Row: Contact and Social Media */}
+      <div className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white px-8 py-2 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center justify-between space-x-4">
+          <span className="text-sm">📞 Phone: 03442148252</span>
+          <span className="text-sm">✉️ Email: Hamzaiqbal2890@gmail.com</span>
         </div>
 
-        <div className="text-center mb-2 md:mb-0 md:mx-auto">
+        <div className="text-center md:mx-auto mt-2 md:mt-0">
           <p className="text-sm md:text-lg font-semibold">
-            Follow us and get a chance for 50% discount
+            🌟 Follow us and get a chance for <span className="text-yellow-400">50% discount!</span>
           </p>
         </div>
 
-        <div className="flex space-x-4 justify-center md:justify-end mt-2 md:mt-0">
-          <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <div className="flex space-x-4 mt-2 md:mt-0 justify-center md:justify-end">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
             <FaFacebook size={20} />
           </a>
-          <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
             <FaTwitter size={20} />
           </a>
-          <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
             <FaInstagram size={20} />
           </a>
-          <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition">
             <FaYoutube size={20} />
           </a>
         </div>
       </div>
 
-      {/* Second Row */}
-      <div className="w-full bg-gray-100 text-gray-700 flex items-center justify-between px-8 py-4 shadow-md">
-        <h1 className="text-3xl font-bold text-blue-700">Bandage</h1>
+      {/* Second Row: Logo and Navigation */}
+      <div className="w-full bg-white shadow-md px-8 py-4 flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-blue-600 tracking-wide">
+          Bandage
+        </h1>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center space-x-6">
-          <nav>
-            <ul className="flex space-x-6 text-lg items-center">
-              <li><a href="/" className="hover:text-blue-500">Home</a></li>
-              <li><a href="/shop" className="hover:text-blue-500">Shop</a></li>
-              <li><a href="/aboutus" className="hover:text-blue-500">About Us</a></li>
-              <li><a href="/team" className="hover:text-blue-500">Our Team</a></li>
-              <li><a href="/contactus" className="hover:text-blue-500">Contact Us</a></li>
-              <li><a href="/pricing" className="hover:text-blue-500">Pages</a></li>
-            </ul>
-          </nav>
+        <nav className="hidden md:flex items-center space-x-6">
+          <ul className="flex space-x-6 text-lg font-semibold">
+            {["Home", "shop", "About Us", "Our Team", "Contact Us", "Pages"].map((item, index) => (
+              <li key={index}>
+                <a href={`/${item.toLowerCase().replace(/\s/g, "")}`} className="hover:text-blue-500 transition duration-300">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
 
           <div className="flex items-center space-x-4">
-            <a href="#" className="hover:text-blue-700 text-blue-500 font-semibold">
+            <a href="/login" className="hover:text-blue-700 text-blue-500 font-medium">
               Login/Register
             </a>
             <a href="#" aria-label="Search" className="hover:text-black text-blue-600">
               <FaSearch size={20} />
             </a>
-            <a href="/pricing" aria-label="Cart" className="hover:text-black text-blue-600">
+            <a href="/cart" aria-label="Cart" className="hover:text-black text-blue-600">
               <FaShoppingCart size={20} />
             </a>
           </div>
-        </div>
+        </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
-            <FaBars size={24} />
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu" className="focus:outline-none">
+            <FaBars size={28} className="text-blue-600" />
           </button>
         </div>
       </div>
 
       {/* Dropdown Menu for Mobile */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-white shadow-md">
-          <ul className="flex flex-col space-y-2 p-4">
-            <li><a href="#" className="block hover:text-blue-500">Home</a></li>
-            <li><a href="#" className="block hover:text-blue-500">Shop</a></li>
-            <li><a href="#" className="block hover:text-blue-500">About</a></li>
-            <li><a href="#" className="block hover:text-blue-500">Blog</a></li>
-            <li><a href="#" className="block hover:text-blue-500">Contact</a></li>
-            <li><a href="#" className="block hover:text-blue-500">Pages</a></li>
-            <li><a href="#" className="block hover:text-blue-600 text-blue-300">Login/Register</a></li>
+        <nav className="md:hidden bg-white shadow-lg">
+          <ul className="flex flex-col space-y-4 p-6">
+            {["Home", "Shop", "About Us", "Our Team", "Contact Us", "Pages"].map((item, index) => (
+              <li key={index}>
+                <a href={`/${item.toLowerCase().replace(/\s/g, "")}`} className="block text-lg text-gray-700 hover:text-blue-500 transition duration-300">
+                  {item}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href="/login" className="block text-blue-600 font-medium hover:text-blue-800 transition">
+                Login/Register
+              </a>
+            </li>
           </ul>
         </nav>
       )}

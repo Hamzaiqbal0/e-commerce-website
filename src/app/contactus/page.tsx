@@ -17,22 +17,40 @@ export default function ContactUs() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gray-100 p-8">
-        <nav className="w-[1322px] h-[91px] flex justify-between items-center mx-auto mt-4 px-4">
-          <h1 className="text-3xl font-bold">Bandage</h1>
-          <ul className="flex space-x-6">
-            <li><a href="/" className="hover:text-gray-500 font-semibold">Home</a></li>
-            <li><a href="/productspecs" className="hover:text-gray-500 font-semibold">Product</a></li>
-            <li><a href="/pricing" className="hover:text-gray-500 font-semibold">Pricing</a></li>
-            <li><a href="/contactus" className="hover:text-gray-500 font-semibold">Contact</a></li>
-          </ul>
-          <div className="flex space-x-4 items-center">
-            <a href="/login" className="hover:text-gray-500">Login</a>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-              Become a Member →
-            </button>
-          </div>
-        </nav>
+    <div className="w-full min-h-screen bg-gray-100 p-4">
+        <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
+        <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
+        <ul className="flex space-x-6">
+          <li>
+            <a href="/" className="hover:text-blue-500 font-semibold transition duration-300">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
+              Product
+            </a>
+          </li>
+          <li>
+            <a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+        <div className="flex space-x-4 items-center">
+          <a href="/login" className="hover:text-blue-500 transition duration-300">
+            Login
+          </a>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
+            Become a Member →
+          </button>
+        </div>
+      </nav>
       {/* Contact Us Section */}
       <section className="flex flex-wrap items-center justify-between mb-12">
         <div className="w-full md:w-1/2 flex flex-col items-start">
@@ -44,10 +62,10 @@ export default function ContactUs() {
           
           <div className="flex flex-col space-y-2 mb-6">
             <Link href="tel:+1234567890" className="text-blue-500 hover:underline">
-              Phone: +1 234 567 890
+              Phone: +92 344 2148252
             </Link>
-            <Link href="fax:+1234567890" className="text-blue-500 hover:underline">
-              Fax: +1 234 567 890
+            <Link href="Email" className="text-blue-500 hover:underline">
+              E-mail: Hamzaiqbal2890@gmail.com
             </Link>
           </div>
 
