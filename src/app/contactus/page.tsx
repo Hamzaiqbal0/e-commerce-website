@@ -1,24 +1,30 @@
-"use client"
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import Footer from '../components/footer';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import Footer from "../components/footer";
+import SignInSignUp from "../sign/page"; // Importing the SignInSignUp popup
 
 export default function ContactUs() {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
 
   const images = [
-    { src: '/p1.png', alt: 'Office 1' },
-    { src: '/p2.png', alt: 'Office 2' },
-    { src: '/p3.png', alt: 'Office 3' },
+    { src: "/p1.png", alt: "Office 1" },
+    { src: "/p2.png", alt: "Office 2" },
+    { src: "/p3.png", alt: "Office 3" },
   ];
 
+  // Function to toggle popup visibility
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
-    <div className="w-full min-h-screen bg-gray-100 p-4">
-        <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
+    <div className="w-full min-h-screen bg-gray-100">
+      <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
         <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
         <ul className="flex space-x-6">
           <li>
@@ -27,7 +33,7 @@ export default function ContactUs() {
             </a>
           </li>
           <li>
-            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
             </a>
           </li>
@@ -43,28 +49,29 @@ export default function ContactUs() {
           </li>
         </ul>
         <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-blue-500 transition duration-300">
+          <button onClick={togglePopup} className="hover:text-blue-500 transition duration-300">
             Login
-          </a>
+          </button>
           <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
             Become a Member →
           </button>
         </div>
       </nav>
+
       {/* Contact Us Section */}
-      <section className="flex flex-wrap items-center justify-between mb-12">
+      <section className="flex flex-wrap items-center justify-between mb-12 ml-8">
         <div className="w-full md:w-1/2 flex flex-col items-start">
           <p className="text-lg text-gray-600 mb-2">CONTACT US</p>
           <h1 className="text-4xl font-bold mb-4">Get in touch today!</h1>
           <p className="text-gray-600 mb-4">
             We are here to answer your questions and help you get started. Reach out to us through the contact details below!
           </p>
-          
+
           <div className="flex flex-col space-y-2 mb-6">
-            <Link href="tel:+1234567890" className="text-blue-500 hover:underline">
+            <Link href="tel:+923442148252" className="text-blue-500 hover:underline">
               Phone: +92 344 2148252
             </Link>
-            <Link href="Email" className="text-blue-500 hover:underline">
+            <Link href="mailto:Hamzaiqbal2890@gmail.com" className="text-blue-500 hover:underline">
               E-mail: Hamzaiqbal2890@gmail.com
             </Link>
           </div>
@@ -120,11 +127,12 @@ export default function ContactUs() {
         </div>
 
         <p className="text-xl font-semibold mb-4">We can not wait to meet you</p>
-        <h2 className="text-3xl font-bold mb-6">Lets Talk with Us</h2>
+        <h2 className="text-3xl font-bold mb-6">Let's Talk with Us</h2>
         <button className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 shadow-lg mb-10">
           Try it for Free
         </button>
       </section>
+
       <Footer />
 
       {/* Image Modal Popup */}
@@ -139,10 +147,11 @@ export default function ContactUs() {
               &times;
             </button>
           </div>
-          
         </div>
-        
       )}
+
+      {/* Sign In / Sign Up Popup */}
+      {showPopup && <SignInSignUp onClose={togglePopup} />}
     </div>
   );
 }

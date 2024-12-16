@@ -166,7 +166,7 @@ export default function Home() {
     </p>
     <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
       <p className="text-white text-3xl font-bold">$16.48</p>
-      <Link href="/pricing">
+      <Link href="/products">
         <button className="bg-white text-green-700 font-semibold px-8 py-3 rounded-md hover:bg-green-100 transition duration-300 shadow-lg">
           Add to Cart
         </button>
@@ -179,7 +179,7 @@ export default function Home() {
     <img
       src="/pic1.png"
       alt="Vita Classic Product"
-      className="w-full h-full object-cover rounded-lg shadow-2xl"
+      className="w-full h-auto object-cover rounded-lg shadow-2xl"
     />
   </div>
 </section>

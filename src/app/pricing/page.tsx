@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Footer from "../components/footer";
+import SignInSignUp from "../sign/page";
 
 export default function Pricing() {
   // FAQ Data
@@ -49,10 +50,16 @@ export default function Pricing() {
 
   // State for active FAQ
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   // Toggle FAQ
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  // Toggle Popup
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
   };
 
   return (
@@ -66,7 +73,7 @@ export default function Pricing() {
             </a>
           </li>
           <li>
-            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
             </a>
           </li>
@@ -82,21 +89,25 @@ export default function Pricing() {
           </li>
         </ul>
         <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-blue-500 transition duration-300">
+          <button onClick={togglePopup} className="hover:text-blue-500 transition duration-300">
             Login
-          </a>
+          </button>
           <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
             Become a Member →
           </button>
         </div>
       </nav>
 
+      {/* Show SignIn/SignUp Popup */}
+      {showPopup && <SignInSignUp onClose={togglePopup} />}
+
       {/* First Section: Pricing Header */}
       <section className="w-[870px] h-[180px] mx-auto mt-12 text-center">
         <h1 className="text-lg mb-4">Pricing</h1>
         <h2 className="text-3xl font-semibold mb-4">Least Pricing with Great Value</h2>
         <nav className="text-gray-500">
-          <span className="hover:text-gray-700 cursor-pointer">Home</span> &gt; <span className="text-black font-semibold">Pricing</span>
+          <span className="hover:text-gray-700 cursor-pointer">Home</span> &gt;{" "}
+          <span className="text-black font-semibold">Pricing</span>
         </nav>
       </section>
 
@@ -104,8 +115,7 @@ export default function Pricing() {
       <section className="w-full mt-4 text-center">
         <h2 className="text-4xl font-bold mb-4">Pricing</h2>
         <p className="text-lg text-gray-600 mb-6">
-          Choose the plan that fits your needs. Flexible options designed for you.
-          Switch between monthly and yearly subscriptions with ease.
+          Choose the plan that fits your needs. Flexible options designed for you. Switch between monthly and yearly subscriptions with ease.
         </p>
 
         {/* Subscription Toggle */}
@@ -127,23 +137,16 @@ export default function Pricing() {
 
       {/* Third Section: Subscription Plan Images with Pop-Up Effect */}
       <section className="w-full mt-16 flex justify-center items-end gap-6">
-        {/* Left Image */}
         <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl">
           <img src="/xyz1.png" alt="Image 1" className="w-full h-full object-cover" />
         </div>
-
-        {/* Center Image (Lifted) */}
         <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-xl -mt-16 transform transition-transform duration-200 hover:scale-110 hover:shadow-2xl">
           <img src="/xyz2.png" alt="Image 2" className="w-full h-full object-cover" />
         </div>
-
-        {/* Right Image */}
         <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl">
           <img src="/xyz3.png" alt="Image 3" className="w-full h-full object-cover" />
         </div>
       </section>
-
-      <img src="/mm.png" alt="Image 3" className="w-full h-full object-cover" />
 
       {/* Pricing FAQs Section */}
       <section className="w-full max-w-4xl mx-auto mt-20 mb-16 px-4">
@@ -158,15 +161,12 @@ export default function Pricing() {
                 <span>{faq.question}</span>
                 <span className="text-2xl">{activeIndex === index ? "−" : "+"}</span>
               </button>
-              {activeIndex === index && (
-                <p className="text-gray-600 pb-4 pl-2">{faq.answer}</p>
-              )}
+              {activeIndex === index && <p className="text-gray-600 pb-4 pl-2">{faq.answer}</p>}
             </div>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
