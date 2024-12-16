@@ -94,7 +94,7 @@ export default function Pricing() {
       {/* First Section: Pricing Header */}
       <section className="w-[870px] h-[180px] mx-auto mt-12 text-center">
         <h1 className="text-lg mb-4">Pricing</h1>
-        <h2 className="text-3xl font-semibold mb-4">Simple Pricing</h2>
+        <h2 className="text-3xl font-semibold mb-4">Least Pricing with Great Value</h2>
         <nav className="text-gray-500">
           <span className="hover:text-gray-700 cursor-pointer">Home</span> &gt; <span className="text-black font-semibold">Pricing</span>
         </nav>

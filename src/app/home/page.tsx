@@ -1,7 +1,5 @@
 // src/app/page.tsx
 import Link from "next/link";
-import Header from "./components/Navbar";
-import Footer from "./components/footer";
 import React from "react";
 
 export default function Home() {
@@ -74,10 +72,10 @@ export default function Home() {
 
   return (
     <div className="font-sans">
-      <Header />
+      
       <main>
         {/* Hero Section */}
-        <section className="relative w-full h-[660px] overflow-hidden">
+        <section className="relative w-full h-[600px] overflow-hidden">
           <img
             src="pic2.jpg"
             alt="Summer Collection"
@@ -162,7 +160,7 @@ export default function Home() {
       Vita Classic Product
     </h2>
     <p className="text-white text-sm sm:text-base mb-6">
-    Experience fashion with a modern edge — our clothing brand blends style and quality, now available at your fingertips through our store.
+      We know how larger objects will act. We know how our objects will act. We know.
     </p>
     <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
       <p className="text-white text-3xl font-bold">$16.48</p>
@@ -201,10 +199,10 @@ export default function Home() {
       Part of the Neural Universe
     </h2>
     <p className="text-gray-600 text-base mb-8">
-    Experience fashion with a modern edge — our clothing brand blends style and quality, now available at your fingertips through our store.
+      We know how larger objects will act. But things on a small scale are different.
     </p>
     <div className="flex flex-col md:flex-row items-center md:space-x-6 space-y-4 md:space-y-0">
-      <Link href="/products">
+      <Link href="/productspecs">
         <button className="bg-green-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-green-700 transition duration-300 shadow-md">
           Buy Now
         </button>
@@ -222,7 +220,7 @@ export default function Home() {
     <p className="text-xl font-semibold text-blue-600 uppercase tracking-widest mb-3">Practice Advice</p>
     <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">Featured Post</h2>
     <p className="text-gray-600 text-lg leading-relaxed">
-    "Elevate your wardrobe with our exclusive designs, where comfort meets creativity, seamlessly delivered through our online shopping platform
+      Problems trying to resolve the conflict between the two major realms of classical physics, Newtonian mechanics.
     </p>
   </div>
 
@@ -267,14 +265,14 @@ export default function Home() {
 
   {/* Learn More Link */}
   <div className="mt-12 text-center">
-    <a href="ourteam" className="text-blue-600 font-semibold text-lg hover:underline">
+    <a href="#" className="text-blue-600 font-semibold text-lg hover:underline">
       Learn More →
     </a>
   </div>
 </section>
 
       </main>
-      <Footer />
+      
     </div>
   );
 }

@@ -19,7 +19,7 @@ const ShopPage = () => {
       {/* Image Gallery Section */}
       <section className="w-full max-w-[1440px] mx-auto flex flex-wrap justify-center gap-6 p-8">
         {['1', '2', '3', '4', '5'].map((num) => (
-          <a href="/productspecs" key={num} className="transform transition hover:scale-105">
+          <a href="/products" key={num} className="transform transition hover:scale-105">
             <img
               src={`/col-md-4 (${num}).png`}
               alt={`Product ${num}`}
@@ -62,7 +62,7 @@ const ShopPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {Array.from({ length: 12 }).map((_, index) => (
             <a
-              href="/productspecs"
+              href="/products"
               key={index}
               className="block transform transition hover:scale-105"
             >

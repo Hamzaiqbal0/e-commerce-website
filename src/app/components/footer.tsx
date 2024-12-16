@@ -116,10 +116,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center text-gray-800 text-sm space-y-2">
+      <div className="text-center text-gray-600 text-sm space-y-2">
         <p>All Rights Reserved</p>
         <p>
-          Made with 💻 by <span className="text-gray-800 font-semibold">Muhammad Hamza Iqbal</span>
+          Made with 💻 by <span className="text-gray-600 font-semibold">Muhammad Hamza Iqbal</span>
         </p>
       </div>
     </footer>
