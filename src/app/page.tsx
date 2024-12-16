@@ -222,7 +222,7 @@ export default function Home() {
     <p className="text-xl font-semibold text-blue-600 uppercase tracking-widest mb-3">Practice Advice</p>
     <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">Featured Post</h2>
     <p className="text-gray-600 text-lg leading-relaxed">
-    "Elevate your wardrobe with our exclusive designs, where comfort meets creativity, seamlessly delivered through our online shopping platform
+    Elevate your wardrobe with our exclusive designs, where comfort meets creativity, seamlessly delivered through our online shopping platform
     </p>
   </div>
 
