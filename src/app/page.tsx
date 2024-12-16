@@ -101,7 +101,7 @@ export default function Home() {
         {/* Editor's Pick Section */}
         <section className="bg-gray-100 py-12">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-2">Editor's Pick</h2>
+            <h2 className="text-4xl font-bold mb-2">Editors Pick</h2>
             <p className="text-gray-600">Handpicked items for you</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-20">
