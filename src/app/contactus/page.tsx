@@ -17,39 +17,34 @@ export default function ContactUs() {
     { src: "/p3.png", alt: "Office 3" },
   ];
 
-  // Function to toggle popup visibility
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
-
   return (
     <div className="w-full min-h-screen bg-gray-100">
       <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
         <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
         <ul className="flex space-x-6">
           <li>
-            <Link href="/" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/" className="hover:text-blue-500 font-semibold transition duration-300">
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
               Pricing
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
               Contact Us
-            </Link>
+            </a>
           </li>
         </ul>
         <div className="flex space-x-4 items-center">
-          <button onClick={togglePopup} className="hover:text-blue-500 transition duration-300">
+          <button onClick={() => setShowPopup(true)} className="hover:text-blue-500 transition duration-300">
             Login
           </button>
           <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
@@ -103,10 +98,22 @@ export default function ContactUs() {
         </div>
       </section>
 
-      <Footer />
-
       {/* Sign In / Sign Up Popup */}
-      {showPopup && <SignInSignUp onClose={togglePopup} />}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <SignInSignUp />
+            <button
+              className="mt-4 text-red-500 hover:underline"
+              onClick={() => setShowPopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Footer />
     </div>
   );
 }
