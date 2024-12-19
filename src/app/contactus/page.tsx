@@ -28,24 +28,24 @@ export default function ContactUs() {
         <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
         <ul className="flex space-x-6">
           <li>
-            <a href="/" className="hover:text-blue-500 font-semibold transition duration-300">
+            <Link href="/" className="hover:text-blue-500 font-semibold transition duration-300">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
+            <Link href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
+            <Link href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
               Pricing
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
+            <Link href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="flex space-x-4 items-center">
@@ -103,52 +103,7 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* Visit Our Office Section */}
-      <section className="text-center">
-        <p className="text-lg text-gray-600 mb-2">VISIT OUR OFFICE</p>
-        <h2 className="text-3xl font-bold mb-4">We help small businesses with big ideas</h2>
-
-        <div className="flex flex-wrap justify-center gap-6 mb-8">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-transform duration-300 shadow-lg"
-              onClick={() => setSelectedImage(image.src)}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={300}
-                height={200}
-                className="w-[300px] h-auto object-cover"
-              />
-            </div>
-          ))}
-        </div>
-
-        <p className="text-xl font-semibold mb-4">We can not wait to meet you</p>
-        <h2 className="text-3xl font-bold mb-6">Let&apos;s Talk with Us</h2>
-        <button className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 shadow-lg mb-10">
-          Try it for Free
-        </button>
-      </section>
-
       <Footer />
-
-      {/* Image Modal Popup */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50" onClick={() => setSelectedImage(null)}>
-          <div className="relative max-w-3xl w-full p-4">
-            <Image src={selectedImage} alt="Selected" width={800} height={600} className="w-full h-auto rounded-lg shadow-lg" />
-            <button
-              className="absolute top-4 right-4 text-white text-2xl"
-              onClick={() => setSelectedImage(null)}
-            >
-              &times;
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Sign In / Sign Up Popup */}
       {showPopup && <SignInSignUp onClose={togglePopup} />}
