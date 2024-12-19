@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Footer from "../components/footer";
-import SignInSignUp from "../sign/page";
+import SignInSignUp from "../sign/page"; // Import the SignInSignUp component
 
 export default function Pricing() {
   // FAQ Data
@@ -99,7 +99,19 @@ export default function Pricing() {
       </nav>
 
       {/* Show SignIn/SignUp Popup */}
-      {showPopup && <SignInSignUp onClose={togglePopup} />}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <SignInSignUp />
+            <button
+              className="mt-4 text-red-500 hover:underline"
+              onClick={togglePopup}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* First Section: Pricing Header */}
       <section className="w-[870px] h-[180px] mx-auto mt-12 text-center">
