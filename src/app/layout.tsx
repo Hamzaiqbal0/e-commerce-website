@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+      <a href="https://wa.me/03442148252" target="_blank" className="whatsapp-icon">
+  <img src="wsp.webp" alt="WhatsApp" />
+</a>
+
+      </body>
     </html>
   );
 }
