@@ -1,8 +1,11 @@
+// src/app/sign/page.tsx
 "use client";
 import { useState } from "react";
-import { FaGoogle } from "react-icons/fa"; // For the Google icon
+import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
 
-export default function SignInSignUp({ onClose }: { onClose: () => void }) {
+export default function SignInSignUp() {
+  const router = useRouter();
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
@@ -16,37 +19,32 @@ export default function SignInSignUp({ onClose }: { onClose: () => void }) {
     setIsLoading(true);
     setError('');
 
-    // Simple validation
     if (!email || !password || (isSignUp && password !== confirmPassword)) {
       setError("Please fill all fields correctly.");
       setIsLoading(false);
       return;
     }
 
-    // Handle submission (for example, call an API here)
     setTimeout(() => {
       setIsLoading(false);
-      onClose();
       alert(`${isSignUp ? "Sign Up" : "Sign In"} successful!`);
+      router.push('/'); // Redirect to home or another page
     }, 1500);
   };
 
-  // Handle Google Sign In (You can implement actual logic here)
+  // Handle Google Sign-In
   const handleGoogleSignIn = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      onClose();
       alert("Signed in with Google!");
+      router.push('/'); // Redirect after Google Sign-In
     }, 1500);
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full relative">
-        <button onClick={onClose} className="absolute top-2 right-2 text-2xl">
-          &times;
-        </button>
         <h2 className="text-2xl font-bold mb-4 text-center">
           {isSignUp ? "Sign Up" : "Sign In"}
         </h2>
