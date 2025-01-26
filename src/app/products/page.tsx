@@ -130,24 +130,8 @@ export default function ProductDetails() {
           </div>
         </div>
       </section>
-
-      <h1 className="text-blue-600 text-2xl font-bold ml-24 mt-10 underline">BESTSELLER PRODUCTS</h1>
-     {/* New Section with 3 Subsections and Pagination */}
-     <section className="w-[1440px] h-[1178px] mx-auto p-4 mt-10">
-        <div className="w-[1124px] h-[1778px] mx-auto">
-          <div className="flex flex-col gap-16">
-          < Cloths />
-
-          </div>
-
-          {/* Pagination Image */}
-          <div className="mt-16 flex justify-center">
-            <a href="/shop/page/2">
-              <img src="/ul.png" alt="Pagination" className="w-[213px] h-[54px] object-cover mr-24" />
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* New Section with 3 Subsections and Pagination */}    
+      < Cloths />
       <section className="w-[1440px] h-[175px] mx-auto p-4 mb-10">
         <img src="/row.png" alt="Banner" className="w-[1054px] h-[175px] mx-auto object-cover ml-28" />
       </section>

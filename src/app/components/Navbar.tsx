@@ -10,11 +10,15 @@ import {
   FaShoppingCart,
   FaBars,
 } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  
+  const router = useRouter();
 
   const openAuthModal = () => setShowAuthModal(true);
   const closeAuthModal = () => {
@@ -23,6 +27,14 @@ const Navbar = () => {
   };
 
   const toggleAuthMode = () => setIsSignUp(!isSignUp);
+
+  const handleSearch = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (searchQuery.trim()) {
+      // Redirect to search results page or filter products locally
+      router.push(`/search?query=${searchQuery}`);
+    }
+  };
 
   return (
     <header className="w-full relative">
@@ -56,7 +68,7 @@ const Navbar = () => {
       </div>
 
       {/* Second Row: Logo and Navigation */}
-      <div className="w-full bg-white shadow-md px-8 py-4 flex items-center justify-between">
+      <div className="w-full bg-white shadow-md px-8 py-2 flex items-center justify-between">
         <h1 className="text-4xl font-bold text-blue-600 tracking-wide">
           Bandage
         </h1>
@@ -81,9 +93,20 @@ const Navbar = () => {
               Login/Register
             </button>
             
-            <a href="#" aria-label="Search" className="hover:text-black text-blue-600">
-              <FaSearch size={20} />
-            </a>
+            <div className="p-2">
+        <form onSubmit={handleSearch} className="relative">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search products"
+            className="w-44 py-1 px-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800"
+          />
+          <button type="submit" className="absolute right-2 top-2 text-blue-500">
+            <FaSearch size={20} />
+          </button>
+        </form>
+      </div>
             <a href="/cart" aria-label="Cart" className="hover:text-black text-blue-600">
               <FaShoppingCart size={20} />
             </a>

@@ -185,14 +185,14 @@ const Cloths = () => {
                 </div>
               )}
               <div className="p-6">
-                <h2 className="text-xl font-extrabold text-gray-800 truncate text-center">
+                <h2 className="text-xl font-bold text-gray-800 truncate text-center">
                   {product.name}
                 </h2>
-                <p className="text-lg font-semibold text-blue-600 mt-2 text-center">${product.price}</p>
+                <p className="text-xl font-semibold text-blue-600 mt-2 text-center">${product.price}</p>
 
                 {/* Display Discount if available */}
                 {product.discountPercent && (
-                  <p className="text-sm font-bold text-red-500 text-center mt-2">
+                  <p className="text-md font-bold text-red-500 text-center mt-2">
                     {product.discountPercent}% OFF
                   </p>
                 )}
