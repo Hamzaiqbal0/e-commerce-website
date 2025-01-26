@@ -6,13 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-data": "node scripts/importSanityData.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.15",
+    "@sanity/client": "^6.27.1",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.71.0",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
     "next": "14.2.2",
+    "next-sanity": "^9.8.39",
+    "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "sanity": "^3.71.0",
+    "styled-components": "^6.1.14",
+    "sweetalert2": "^11.15.10"
   },
   "devDependencies": {
     "@types/node": "^20",

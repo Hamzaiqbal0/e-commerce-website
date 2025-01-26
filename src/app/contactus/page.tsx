@@ -28,7 +28,7 @@ export default function ContactUs() {
             </a>
           </li>
           <li>
-            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
             </a>
           </li>
@@ -93,7 +93,7 @@ export default function ContactUs() {
             alt="Contact Us Image"
             width={500}
             height={400}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
+            className="w-full h-auto object-cover rounded-lg "
           />
         </div>
       </section>

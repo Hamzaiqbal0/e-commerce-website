@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/footer';
 import Link from 'next/link';
+import Cloths from '../components/Cloths';
 
 export default function ProductDetails() {
   return (
@@ -135,22 +136,8 @@ export default function ProductDetails() {
      <section className="w-[1440px] h-[1178px] mx-auto p-4 mt-10">
         <div className="w-[1124px] h-[1778px] mx-auto">
           <div className="flex flex-col gap-16">
-           
-            {/* Subsection 2 */}
-            <div className="flex gap-4">
-              <a href="/productspecs"><img src="/col-md-3 (5).png" alt="Image 5" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3 (6).png" alt="Image 6" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3 (7).png" alt="Image 7" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3 (8).png" alt="Image 8" className="w-[238px] h-[488px] object-cover" /></a>
-            </div>
+          < Cloths />
 
-            {/* Subsection 3 */}
-            <div className="flex gap-4">
-              <a href="/productspecs"><img src="/col-md-3 (9).png" alt="Image 9" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3 (10).png" alt="Image 10" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3 (11).png" alt="Image 11" className="w-[238px] h-[488px] object-cover" /></a>
-              <a href="/productspecs"><img src="/col-md-3.png" alt="Image 12" className="w-[238px] h-[488px] object-cover" /></a>
-            </div>
           </div>
 
           {/* Pagination Image */}

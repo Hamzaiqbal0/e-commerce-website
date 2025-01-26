@@ -20,7 +20,6 @@ export default function RootLayout({
       <a href="https://wa.me/03442148252" target="_blank" className="whatsapp-icon">
   <img src="wsp.webp" alt="WhatsApp" />
 </a>
-
       </body>
     </html>
   );

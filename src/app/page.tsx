@@ -1,82 +1,20 @@
 // src/app/page.tsx
+"use client"
+
 import Link from "next/link";
 import Header from "./components/Navbar";
 import Footer from "./components/footer";
 import React from "react";
+import Cloths from "./components/Cloths";
 
 export default function Home() {
-  const products = [
-    {
-      id: 1,
-      name: "Classic Shirt",
-      department: "English Department",
-      price: "$45.00",
-      image: "/BS1.png",
-      colors: ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-yellow-500"],
-    },
-    {
-      id: 2,
-      name: "Denim Jacket",
-      department: "English Department",
-      price: "$40.00",
-      image: "/BS2.png",
-      colors: ["bg-gray-700", "bg-blue-600", "bg-red-400", "bg-purple-500"],
-    },
-    {
-      id: 3,
-      name: "Sports Shoes",
-      department: "English Department",
-      price: "$60.00",
-      image: "/BS3.png",
-      colors: ["bg-black", "bg-white", "bg-blue-400", "bg-orange-400"],
-    },
-    {
-      id: 4,
-      name: "Casual Trousers",
-      department: "English Department",
-      price: "$35.00",
-      image: "/BS4.png",
-      colors: ["bg-brown-500", "bg-gray-400", "bg-green-700", "bg-yellow-300"],
-    },
-    {
-      id: 5,
-      name: "Summer Dress",
-      department: "English Department",
-      price: "$50.00",
-      image: "/BS5.png",
-      colors: ["bg-pink-400", "bg-red-500", "bg-blue-300", "bg-white"],
-    },
-    {
-      id: 6,
-      name: "Leather Wallet",
-      department: "English Department",
-      price: "$20.00",
-      image: "/BS6.png",
-      colors: ["bg-brown-700", "bg-black", "bg-tan-500", "bg-gray-600"],
-    },
-    {
-      id: 7,
-      name: "Wool Scarf",
-      department: "English Department",
-      price: "$15.00",
-      image: "/BS7.png",
-      colors: ["bg-gray-300", "bg-red-600", "bg-purple-700", "bg-green-500"],
-    },
-    {
-      id: 8,
-      name: "Running Shorts",
-      department: "English Department",
-      price: "$30.00",
-      image: "/BS8.png",
-      colors: ["bg-blue-500", "bg-black", "bg-gray-800", "bg-yellow-400"],
-    },
-  ];
 
   return (
     <div className="font-sans">
       <Header />
       <main>
         {/* Hero Section */}
+        
         <section className="relative w-full h-[660px] overflow-hidden">
           <img
             src="pic2.jpg"
@@ -119,44 +57,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        {/* Featured Products Section */}
-        <section className="py-16 px-4 md:px-20 bg-white">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold mb-3">Bestseller Products</h2>
-            <p className="text-gray-500">Our most popular items this season</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="bg-gray-50 shadow-md rounded-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-[500px] object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-1">{product.name}</h3>
-                  <p className="text-gray-500 mb-2">{product.department}</p>
-                  <p className="text-lg font-bold text-green-500 mb-3">{product.price}</p>
-                  <div className="flex space-x-2">
-                    {product.colors.map((color, index) => (
-                      <span
-                        key={index}
-                        className={`w-6 h-6 rounded-full ${color} border border-gray-300`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="max-w-[1440px] h-auto bg-gradient-to-br from-green-500 to-green-700 flex flex-col lg:flex-row items-center justify-between mx-auto py-16 px-8 relative overflow-hidden">
+        <Cloths /> 
+        
+        <section className="max-w-[1440px] h-[600px] bg-gradient-to-br from-green-500 to-green-700 flex flex-col lg:flex-row items-center justify-between mx-auto py-16 px-8 relative overflow-hidden">
   {/* Left Sub-section */}
-  <div className="w-full lg:w-[500px] bg-white bg-opacity-25 backdrop-blur-lg p-10 rounded-lg text-center lg:text-left shadow-lg mb-8 lg:mb-0">
+  <div className="w-full lg:w-[500px] h-[400px] bg-white bg-opacity-25 backdrop-blur-lg p-10 rounded-lg text-center lg:text-left shadow-lg mb-8 lg:mb-0">
     <p className="text-white text-lg uppercase tracking-widest mb-3">Summer 2020</p>
     <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
       Vita Classic Product
@@ -175,18 +80,18 @@ export default function Home() {
   </div>
 
   {/* Right Side Image */}
-  <div className="w-full lg:w-1/2 h-auto">
+  <div className="w-[600px] lg:w-1/2 h-[600px]">
     <img
       src="/pic1.png"
       alt="Vita Classic Product"
-      className="w-full h-auto object-cover rounded-lg shadow-2xl"
+      className="w-[600px] h-[600px] object-cover rounded-lg"
     />
   </div>
 </section>
 
 <section className="max-w-[1440px] bg-gradient-to-b from-gray-100 to-gray-300 flex flex-col-reverse lg:flex-row items-center justify-between mx-auto py-16 px-8 relative">
   {/* Left Side Image */}
-  <div className="w-full lg:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full lg:w-1/2 relative overflow-hidden rounded-lg">
     <img
       src="/NN1.png"
       alt="Neural Universe"
@@ -274,6 +179,7 @@ export default function Home() {
 </section>
 
       </main>
+      
       <Footer />
     </div>
   );

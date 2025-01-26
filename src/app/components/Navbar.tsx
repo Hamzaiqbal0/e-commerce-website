@@ -57,13 +57,13 @@ const Navbar = () => {
 
       {/* Second Row: Logo and Navigation */}
       <div className="w-full bg-white shadow-md px-8 py-4 flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-blue-600 tracking-wide">
+        <h1 className="text-4xl font-bold text-blue-600 tracking-wide">
           Bandage
         </h1>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-6">
-          <ul className="flex space-x-6 text-lg font-semibold">
+          <ul className="flex space-x-6 text-xl font-semibold">
             {["Home", "Shop", "Products", "Our Team", "About Us", "Contact Us"].map((item, index) => (
               <li key={index}>
                 <a href={`/${item.toLowerCase().replace(/\s/g, "")}`} className="hover:text-blue-500 transition duration-300">
@@ -80,10 +80,11 @@ const Navbar = () => {
             >
               Login/Register
             </button>
+            
             <a href="#" aria-label="Search" className="hover:text-black text-blue-600">
               <FaSearch size={20} />
             </a>
-            <a href="/products" aria-label="Cart" className="hover:text-black text-blue-600">
+            <a href="/cart" aria-label="Cart" className="hover:text-black text-blue-600">
               <FaShoppingCart size={20} />
             </a>
           </div>

@@ -73,7 +73,7 @@ export default function Pricing() {
             </a>
           </li>
           <li>
-            <a href="/products" className="hover:text-blue-500 font-semibold transition duration-300">
+            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
               Product
             </a>
           </li>
