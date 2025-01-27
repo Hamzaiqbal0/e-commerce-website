@@ -63,10 +63,14 @@ const CartPage = () => {
   };
 
   const calculateTotal = () => {
-    return cartItems.reduce(
+    const subtotal = cartItems.reduce(
       (total, item) => total + item.product.price * item.quantity,
       0
     );
+    const discount = subtotal * 0.15; // 15% discount
+    const tax = 0.00; // Static sales tax (can be updated later)
+    const total = subtotal - discount + tax;
+    return { subtotal, discount, tax, total };
   };
 
   const handleProceed = () => {
@@ -163,15 +167,33 @@ const CartPage = () => {
               <div className="flex justify-between items-center mb-6">
                 <p className="text-gray-600">Subtotal:</p>
                 <p className="text-xl font-semibold text-gray-800">
-                  ${calculateTotal().toFixed(2)}
+                  ${calculateTotal().subtotal.toFixed(2)}
                 </p>
               </div>
-              <button
-                onClick={handleProceed}
-                className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition duration-300"
-              >
-                Proceed to Checkout
-              </button>
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">Discount (15%):</p>
+                <p className="text-xl font-semibold text-gray-800">
+                  -${calculateTotal().discount.toFixed(2)}
+                </p>
+              </div>
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">Sales Tax:</p>
+                <p className="text-xl font-semibold text-gray-800">${calculateTotal().tax.toFixed(2)}</p>
+              </div>
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">Total:</p>
+                <p className="text-xl font-semibold text-gray-800">
+                  ${calculateTotal().total.toFixed(2)}
+                </p>
+              </div>
+              <div className="flex justify-center mt-6">
+                <button
+                  onClick={handleProceed}
+                  className="bg-blue-600 text-white font-bold py-3 px-12 rounded-lg hover:bg-blue-700 transition duration-300"
+                >
+                  Proceed to Checkout
+                </button>
+              </div>
             </div>
           </div>
         ) : (

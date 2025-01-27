@@ -44,7 +44,7 @@ const Cloths = () => {
     fetchProducts();
   }, []);
 
-  const maxDescriptionLength = 120;
+  const maxDescriptionLength = 100;
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const toggleDescription = (productId: string) => {
@@ -200,7 +200,7 @@ const Cloths = () => {
                 {/* Display Colors if available */}
                 {product.colors && (
                   <div className="mt-3 flex justify-center gap-2">
-                    <p className="text-sm text-gray-600">Available Colors:</p>
+                    <p className="text-md text-gray-600">Available Colors:</p>
                     {product.colors.map((color, index) => (
                       <div
                         key={index}
