@@ -1,43 +1,12 @@
 import Footer from '../components/footer';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
 
 export default function AboutUs() {
   return (
     <div className="w-full mx-auto bg-gray-50">
       {/* Navbar */}
-      <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
-        <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
-        <ul className="flex space-x-6">
-          <li>
-            <a href="/" className="hover:text-blue-500 font-semibold transition duration-300">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
-              Product
-            </a>
-          </li>
-          <li>
-            <a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
-              Pricing
-            </a>
-          </li>
-          <li>
-            <a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
-              Contact Us
-            </a>
-          </li>
-        </ul>
-        <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-blue-500 transition duration-300">
-            Login
-          </a>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
-            Become a Member →
-          </button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Main Section */}
       <section className="max-w-[1340px] mx-auto flex flex-col lg:flex-row items-center py-16 px-8 gap-12">

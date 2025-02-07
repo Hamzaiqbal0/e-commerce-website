@@ -2,26 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Footer from '../components/footer';
+import Navbar from '../components/Navbar';
 
 export default function Team() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-8">
       {/* Navigation */}
-      <nav className="w-full h-[91px] flex justify-between items-center mx-auto px-4 shadow-md bg-white rounded-lg">
-        <h1 className="text-3xl font-bold text-blue-600">Bandage</h1>
-        <ul className="flex space-x-6">
-          <li><a href="/" className="hover:text-blue-500 font-semibold transition duration-200">Home</a></li>
-          <li><a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-200">Product</a></li>
-          <li><a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-200">Pricing</a></li>
-          <li><a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-200">Contact</a></li>
-        </ul>
-        <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-blue-500 transition duration-200">Login</a>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md">
-            Become a Member →
-          </button>
-        </div>
-      </nav>
+      < Navbar />
 
       {/* What We Do */}
       <p className="text-lg text-gray-600 mb-4 text-center mt-12 tracking-wide">WHAT WE DO</p>

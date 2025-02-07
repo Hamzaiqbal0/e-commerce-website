@@ -8,6 +8,8 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface CartItem {
   product: Product;
@@ -73,6 +75,7 @@ const CartPage = () => {
     return { subtotal, discount, tax, total };
   };
 
+  const router = useRouter();
   const handleProceed = () => {
     Swal.fire({
       title: "Proceed to Checkout?",
@@ -85,6 +88,7 @@ const CartPage = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Proceeded!", "Your order has been successfully placed.", "success");
+        router.push("/checkout");
         setCartItems([]);
       }
     });
@@ -107,9 +111,9 @@ const CartPage = () => {
                   className="bg-gray-50 flex flex-col sm:flex-row items-center shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-4"
                 >
                   {/* Product Image */}
-                  {product.image?.asset?._ref ? (
+                  {product.image ? (
                     <Image
-                      src={urlFor(product.image.asset).url() || ""}
+                      src={urlFor(product.image).url()}
                       alt={product.name || "Product Image"}
                       className="w-32 h-32 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4 border"
                       width={128}
@@ -187,12 +191,15 @@ const CartPage = () => {
                 </p>
               </div>
               <div className="flex justify-center mt-6">
+                <Link href="/checkout">
                 <button
                   onClick={handleProceed}
                   className="bg-blue-600 text-white font-bold py-3 px-12 rounded-lg hover:bg-blue-700 transition duration-300"
                 >
                   Proceed to Checkout
+                  
                 </button>
+                </Link>
               </div>
             </div>
           </div>

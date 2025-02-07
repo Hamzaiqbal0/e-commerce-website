@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import Image from "next/image";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +18,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}
-      <a href="https://wa.me/03442148252" target="_blank" className="whatsapp-icon">
-  <img src="wsp.webp" alt="WhatsApp" />
-</a>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}> 
+             
+          {children}
+          <a
+            href="https://wa.me/03442148252"
+            target="_blank"
+            className="whatsapp-icon"
+          >
+            <Image 
+            src="/wsp.webp" 
+            alt="WhatsApp"
+            width={50}
+            height={50}
+            />
+          </a>         
+        </body>
+      </html>
+      </ClerkProvider>
   );
 }

@@ -23,7 +23,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 flex flex-col justify-center items-start px-10 md:px-20 text-white">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn">
-              Discover the <span className="text-yellow-400">New Collection</span>
+              <span className="bg-yellow-400 rounded-xl text-blue-500"> Discover </span> the <span className="text-yellow-400">New Collection</span>
             </h2>
             <p className="text-lg md:text-xl mb-6 max-w-md animate-fadeInDelay">
               Embrace the elegance of summer fashion with our exclusive range.

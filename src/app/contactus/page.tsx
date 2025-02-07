@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Footer from "../components/footer";
-import SignInSignUp from "../sign/page"; // Importing the SignInSignUp popup
+import Navbar from "../components/Navbar";
 
 export default function ContactUs() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -19,39 +19,7 @@ export default function ContactUs() {
 
   return (
     <div className="w-full min-h-screen bg-gray-100">
-      <nav className="w-full max-w-[1340px] mx-auto flex justify-between items-center py-4 px-6 bg-white shadow-md rounded-b-lg">
-        <h1 className="text-4xl font-bold text-blue-600">Bandage</h1>
-        <ul className="flex space-x-6">
-          <li>
-            <a href="/" className="hover:text-blue-500 font-semibold transition duration-300">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/productspecs" className="hover:text-blue-500 font-semibold transition duration-300">
-              Product
-            </a>
-          </li>
-          <li>
-            <a href="/pricing" className="hover:text-blue-500 font-semibold transition duration-300">
-              Pricing
-            </a>
-          </li>
-          <li>
-            <a href="/contactus" className="hover:text-blue-500 font-semibold transition duration-300">
-              Contact Us
-            </a>
-          </li>
-        </ul>
-        <div className="flex space-x-4 items-center">
-          <button onClick={() => setShowPopup(true)} className="hover:text-blue-500 transition duration-300">
-            Login
-          </button>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">
-            Become a Member →
-          </button>
-        </div>
-      </nav>
+      < Navbar />
 
       {/* Contact Us Section */}
       <section className="flex flex-wrap items-center justify-between mb-12 ml-8">
@@ -101,8 +69,7 @@ export default function ContactUs() {
       {/* Sign In / Sign Up Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <SignInSignUp />
+          <div className="bg-white p-6 rounded-lg shadow-lg">           
             <button
               className="mt-4 text-red-500 hover:underline"
               onClick={() => setShowPopup(false)}
