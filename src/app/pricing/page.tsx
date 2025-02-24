@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Footer from "../components/footer";
-import SignInSignUp from "../sign/page"; // Import the SignInSignUp component
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 
 export default function Pricing() {
   // FAQ Data
@@ -51,98 +51,146 @@ export default function Pricing() {
 
   // State for active FAQ
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [showPopup, setShowPopup] = useState(false);
+  const [isYearly, setIsYearly] = useState(false);
 
   // Toggle FAQ
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  // Toggle Popup
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
+  // Toggle Subscription
+  const toggleSubscription = () => {
+    setIsYearly(!isYearly);
   };
 
-  return (
-    <div className="w-[full] mx-auto px-4">
-      < Navbar />
+  // Pricing Plans Data
+  const plans = [
+    {
+      name: "PREMIUM",
+      price: "19.99",
+      features: [
+        "15% Discount on Products",
+        "Unlimited product updates",
+        "Unlimited product Design",
+        "10GB Cloud storage",
+        "Email and community support",
+      ],
+      highlight: false,
+    },
+    {
+      name: "STANDARD",
+      price: "9.99",
+      features: [
+        "5% Discount on Products",
+        "Unlimited product updates",
+        "Limited product Designs",
+        "2GB Cloud storage",
+        "Email and community support",
+      ],
+      highlight: true,
+    },
+    {
+      name: "FREE",
+      price: "0.00",
+      features: [
+        "No Discount",
+        "Limited product updates",
+        "Limited product Design",
+        "1GB Cloud storage",
+        "Email and community support",
+      ],
+      highlight: false,
+    },
+  ];
 
-      {/* Show SignIn/SignUp Popup */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <SignInSignUp />
-            <button
-              className="mt-4 text-red-500 hover:underline"
-              onClick={togglePopup}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+  return (
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <Navbar />
 
       {/* First Section: Pricing Header */}
-      <section className="w-[870px] h-[180px] mx-auto mt-12 text-center">
-        <h1 className="text-lg mb-4">Pricing</h1>
-        <h2 className="text-3xl font-semibold mb-4">Least Pricing with Great Value</h2>
-        <nav className="text-gray-500">
+      <section className="w-full max-w-4xl mx-auto mt-12 text-center">
+        <h1 className="text-lg sm:text-xl mb-4 text-gray-600">Pricing</h1>
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-4">Least Pricing with Great Value</h2>
+        <nav className="text-gray-500 text-sm sm:text-base">
           <span className="hover:text-gray-700 cursor-pointer">Home</span> &gt;{" "}
           <span className="text-black font-semibold">Pricing</span>
         </nav>
       </section>
 
       {/* Second Section: Pricing Options */}
-      <section className="w-full mt-4 text-center">
-        <h2 className="text-4xl font-bold mb-4">Pricing</h2>
-        <p className="text-lg text-gray-600 mb-6">
+      <section className="w-full max-w-4xl mx-auto mt-8 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Pricing</h2>
+        <p className="text-sm sm:text-lg text-gray-600 mb-6">
           Choose the plan that fits your needs. Flexible options designed for you. Switch between monthly and yearly subscriptions with ease.
         </p>
 
         {/* Subscription Toggle */}
         <div className="flex items-center justify-center gap-4 mb-8">
           <label className="flex items-center cursor-pointer">
-            <span className="text-lg font-medium mr-2">Monthly</span>
+            <span className="text-sm sm:text-lg font-medium mr-2">Monthly</span>
             <div className="relative">
-              <input type="checkbox" className="sr-only peer" />
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={isYearly}
+                onChange={toggleSubscription}
+              />
               <div className="w-14 h-8 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition"></div>
               <div className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full peer-checked:translate-x-6 transition-transform"></div>
             </div>
-            <span className="text-lg font-medium ml-2">Yearly</span>
+            <span className="text-sm sm:text-lg font-medium ml-2">Yearly</span>
           </label>
-          <div className="ml-4 bg-green-500 text-white text-sm font-semibold px-3 py-1 rounded-full">
+          <div className="bg-green-500 text-white text-xs sm:text-sm font-semibold px-3 py-1 rounded-full">
             Save 25%
           </div>
         </div>
       </section>
 
-      {/* Third Section: Subscription Plan Images with Pop-Up Effect */}
-      <section className="w-full mt-16 flex justify-center items-end gap-6">
-        <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl">
-          <img src="/xyz1.png" alt="Image 1" className="w-full h-full object-cover" />
-        </div>
-        <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-xl -mt-16 transform transition-transform duration-200 hover:scale-110 hover:shadow-2xl">
-          <img src="/xyz2.png" alt="Image 2" className="w-full h-full object-cover" />
-        </div>
-        <div className="w-[327px] h-[664px] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl">
-          <img src="/xyz3.png" alt="Image 3" className="w-full h-full object-cover" />
+      {/* Fourth Section: Pricing Table */}
+      <section className="w-full max-w-6xl mx-auto mt-12 sm:mt-20 bg-gray-100 p-6">
+        <div className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`p-6 rounded-lg shadow-lg border transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl ${
+                plan.highlight ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+              }`}
+            >
+              <h2 className="text-2xl font-semibold text-center">{plan.name}</h2>
+              <p className="text-center text-4xl font-bold my-4">
+                {plan.price} <span className="text-lg">$ Per Month</span>
+              </p>
+              <ul className="space-y-3">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-green-500">✔</span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-6 w-full py-2 text-white font-semibold rounded-lg transition bg-blue-500 hover:bg-blue-700">
+                Try for free
+              </button>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Pricing FAQs Section */}
-      <section className="w-full max-w-4xl mx-auto mt-20 mb-16 px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">Pricing FAQs</h2>
+      {/* Fifth Section: Pricing FAQs */}
+      <section className="w-full max-w-4xl mx-auto mt-12 sm:mt-20 mb-16 px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">Pricing FAQs</h2>
         <div className="bg-white shadow-lg rounded-lg p-6">
           {faqs.map((faq, index) => (
             <div key={index} className="mb-4 border-b last:border-b-0">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center py-4 text-left text-lg font-medium text-gray-800 hover:text-blue-600 focus:outline-none"
+                className="w-full flex justify-between items-center py-4 text-left text-sm sm:text-lg font-medium text-gray-800 hover:text-blue-600 focus:outline-none"
               >
                 <span>{faq.question}</span>
-                <span className="text-2xl">{activeIndex === index ? "−" : "+"}</span>
+                <span className="text-xl sm:text-2xl">{activeIndex === index ? "−" : "+"}</span>
               </button>
-              {activeIndex === index && <p className="text-gray-600 pb-4 pl-2">{faq.answer}</p>}
+              {activeIndex === index && (
+                <p className="text-sm sm:text-base text-gray-600 pb-4 pl-2">{faq.answer}</p>
+              )}
             </div>
           ))}
         </div>

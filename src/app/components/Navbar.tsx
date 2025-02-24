@@ -19,10 +19,12 @@ const Navbar = () => {
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
   const toggleMoreDropdown = () => setIsMoreDropdownOpen(!isMoreDropdownOpen);
 
+  // Updated search handler:
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/search?query=${searchQuery}`);
+      // Redirect to the Cloths page with the search query as a URL parameter
+      router.push(`/cloths?query=${encodeURIComponent(searchQuery)}`);
     }
   };
 
@@ -36,7 +38,7 @@ const Navbar = () => {
   return (
     <header className={`sticky top-0 z-50 ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-800"} shadow-lg transition-colors duration-300`}>
       {/* Main Nav */}
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between rounded-lg">
         {/* Logo */}
         <h1
           onClick={navigateToHome}
@@ -66,11 +68,11 @@ const Navbar = () => {
             Products
           </Link>
           <Link
-              href="/contactus"
+              href="/ourteam"
               className={`text-lg font-semibold hover:text-blue-600 transition duration-300 ${pathname.startsWith("/contact") ? "text-blue-600" : ""}`}
             >
-           Contact Us
-            </Link>
+           Our Team
+          </Link>
           <div className="relative">
             <button
               onClick={toggleMoreDropdown}
@@ -80,7 +82,7 @@ const Navbar = () => {
                   : ""
               }`}
             >
-              More
+              More<span className="ml-1 font-thin" style={{ transform: "translateY(1px)" }}>⌄</span>
             </button>
             {isMoreDropdownOpen && (
               <div className="absolute top-10 left-0 bg-white shadow-lg rounded-md p-4 w-48 font-semibold ">
@@ -91,21 +93,20 @@ const Navbar = () => {
                   Pricing
                 </Link>
                 <Link
-                  href="/ourteam"
+                  href="/aboutus"
                   className="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 font-semibold"
                 >
-                  Our Team
+                  About Us
                 </Link>
                 <Link
-                  href="/aboutus"
+                  href="/contactus"
                   className="block text-gray-700 hover:text-blue-600 transition duration-300 py-2"
                 >
-                  About Us
+                  Contact US
                 </Link>
               </div>
             )}
           </div>
-          
         </nav>
 
         {/* Search Bar and Icons */}

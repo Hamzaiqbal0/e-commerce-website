@@ -91,10 +91,10 @@ const teamMembers = [
   { name: 'John Doe', role: 'Software Engineer', image: '/media.png' },
   { name: 'Jane Smith', role: 'Product Manager', image: '/media (2).png' },
   { name: 'Alice Brown', role: 'UX Designer', image: '/media (1).png' },
-  { name: 'Robert White', role: 'DevOps Engineer', image: '/media (3).png' },
+  { name: 'Robert White', role: 'Model', image: '/media (3).png' },
   { name: 'Emily Clark', role: 'Marketing Specialist', image: '/media (4).png' },
   { name: 'Michael Green', role: 'QA Engineer', image: '/c4.png' },
-  { name: 'Sarah Black', role: 'Data Scientist', image: '/c1.png' },
+  { name: 'Sarah Black', role: 'Social Media Marketing', image: '/c1.png' },
   { name: 'William Scott', role: 'Frontend Developer', image: '/c2.png' },
   { name: 'Olivia Davis', role: 'Backend Developer', image: '/c3.png' },
 ];
